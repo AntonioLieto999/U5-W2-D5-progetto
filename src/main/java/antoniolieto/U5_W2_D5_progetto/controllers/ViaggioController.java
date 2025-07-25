@@ -6,6 +6,7 @@ import antoniolieto.U5_W2_D5_progetto.payloads.StatoViaggioUpdateDTO;
 import antoniolieto.U5_W2_D5_progetto.payloads.ViaggioDTO;
 import antoniolieto.U5_W2_D5_progetto.services.ViaggioService;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class ViaggioController {
     private ViaggioService service;
 
     @PostMapping
-    public ResponseEntity<Viaggio> create(@RequestBody ViaggioDTO request){
+    public ResponseEntity<Viaggio> create(@RequestBody @Valid ViaggioDTO request){
         return ResponseEntity.ok(service.create(request));
     }
     @GetMapping
@@ -36,7 +37,7 @@ public class ViaggioController {
     @PatchMapping("/{id}/stato")
     public ResponseEntity<Viaggio> updateStato(
             @PathVariable Integer id,
-            @RequestBody StatoViaggioUpdateDTO request
+            @RequestBody @Valid StatoViaggioUpdateDTO request
     ) {
         StatoViaggio stato;
         try {

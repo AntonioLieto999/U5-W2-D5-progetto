@@ -3,6 +3,7 @@ package antoniolieto.U5_W2_D5_progetto.controllers;
 import antoniolieto.U5_W2_D5_progetto.entities.Dipendente;
 import antoniolieto.U5_W2_D5_progetto.payloads.DipendenteDTO;
 import antoniolieto.U5_W2_D5_progetto.services.DipendenteService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +17,7 @@ public class DipendenteController {
     private DipendenteService service;
 
     @PostMapping
-    public ResponseEntity<Dipendente> create(@RequestBody DipendenteDTO request){
+    public ResponseEntity<Dipendente> create(@RequestBody @Valid DipendenteDTO request){
         return ResponseEntity.ok(service.create(request));
     }
     @GetMapping
@@ -29,7 +30,7 @@ public class DipendenteController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Dipendente> update(@PathVariable Integer id, @RequestBody  DipendenteDTO request) {
+    public ResponseEntity<Dipendente> update(@PathVariable Integer id, @RequestBody @Valid DipendenteDTO request) {
         return ResponseEntity.ok(service.update(id, request));
     }
 
