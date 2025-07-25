@@ -1,7 +1,7 @@
 package antoniolieto.U5_W2_D5_progetto.entities;
 
 import jakarta.persistence.*;
-import org.springframework.context.annotation.EnableMBeanExport;
+
 
 import java.time.LocalDate;
 
@@ -24,6 +24,9 @@ public class Prenotazione {
         this.viaggio = viaggio;
         this.dataRichiesta = dataRichiesta;
         this.note = note;
+    }
+    public Prenotazione() {
+
     }
 
     public int getId() {

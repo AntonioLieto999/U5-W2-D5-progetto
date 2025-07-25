@@ -23,6 +23,10 @@ public class Dipendente {
         this.email = email;
     }
 
+    public Dipendente() {
+
+    }
+
     public int getId() {
         return id;
     }

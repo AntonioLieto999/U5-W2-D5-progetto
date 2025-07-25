@@ -22,6 +22,10 @@ public class Viaggio {
         this.stato = stato;
     }
 
+    public Viaggio() {
+
+    }
+
     public int getId() {
         return id;
     }
