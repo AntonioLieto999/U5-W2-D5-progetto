@@ -2,20 +2,21 @@ package antoniolieto.U5_W2_D5_progetto.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Dipendente {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String username;
     private String nome;
     private String cognome;
     private String email;
+    private String immagine;
 
-    public Dipendente(int id, String username, String nome, String cognome, String email) {
-        this.id = id;
+    public Dipendente( String username, String nome, String cognome, String email) {
         this.username = username;
         this.nome = nome;
         this.cognome = cognome;
@@ -56,5 +57,13 @@ public class Dipendente {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getImmagine() {
+        return immagine;
+    }
+
+    public void setImmagine(String immagine) {
+        this.immagine = immagine;
     }
 }

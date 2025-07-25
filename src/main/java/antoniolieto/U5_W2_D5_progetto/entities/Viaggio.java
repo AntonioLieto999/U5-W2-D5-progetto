@@ -8,7 +8,7 @@ import java.time.LocalDate;
 @Entity
 public class Viaggio {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String destinazione;

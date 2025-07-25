@@ -1,6 +1,7 @@
 package antoniolieto.U5_W2_D5_progetto.entities;
 
 import jakarta.persistence.*;
+import org.springframework.context.annotation.EnableMBeanExport;
 
 import java.time.LocalDate;
 
@@ -10,10 +11,10 @@ public class Prenotazione {
     @GeneratedValue
     private int id;
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "id_viaggio")
     private Dipendente dipendente;
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "id_prenotazione")
     private Viaggio viaggio;
     private LocalDate dataRichiesta;
     private String note;
