@@ -9,5 +9,4 @@ public class U5W2D5ProgettoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(U5W2D5ProgettoApplication.class, args);
 	}
-
 }
